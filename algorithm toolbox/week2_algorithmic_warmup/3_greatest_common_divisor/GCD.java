@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class GCD {
+  private static int gcd_naive(int a, int b) {
+    int current_gcd = 1;
+    if(b>a){
+      int c=a;
+      a=b;
+      b=a;
+    }
+    for(int i=1;i<99;++i){
+      a=b;
+      b=a%b;
+      if(b==0){
+        current_gcd=a;
+      }
+
+    }
+
+    return current_gcd;
+  }
+
+  public static void main(String args[]) {
+    Scanner scanner = new Scanner(System.in);
+    int a = scanner.nextInt();
+    int b = scanner.nextInt();
+
+    System.out.println(gcd_naive(a, b));
+  }
+}
